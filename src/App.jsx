@@ -1,10 +1,11 @@
 import Header from "./components/header";
+import ResultsContainer from "./components/results";
 
 function App() {
   return (
     <div>
       <Header />
-      IP Address Location Timezone UTC ISP
+      <ResultsContainer />
     </div>
   );
 }

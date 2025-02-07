@@ -1,0 +1,10 @@
+@use "../../styles/util/" as *;
+
+.container {
+  background-color: $white;
+  border: 0.5px solid $dark-grey;
+  border-radius: $br;
+  margin: rem(-120) auto 0;
+  padding: 0 0 rem(10);
+  width: 90%;
+}

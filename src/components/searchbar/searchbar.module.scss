@@ -4,14 +4,17 @@
   form {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
+    width: 90%;
     input {
       border: 0.5px solid $dark-grey;
       border-right: none;
-      border-radius: 10px 0 0 10px;
+      border-radius: $br 0 0 $br;
       color: $very-dark-grey;
-      height: rem(40);
-      padding: rem(8) rem(16);
-      width: 80%;
+      font-size: rem(15);
+      height: rem(50);
+      padding: rem(10) rem(22);
+      width: 100%;
       &:focus {
         outline: none;
       }
@@ -19,13 +22,13 @@
     button {
       background-color: $very-dark-grey;
       border: none;
-      border-radius: 0 10px 10px 0;
+      border-radius: 0 $br $br 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: rem(40);
+      width: rem(50);
       img {
-        width: rem(6);
+        width: rem(10);
       }
     }
   }

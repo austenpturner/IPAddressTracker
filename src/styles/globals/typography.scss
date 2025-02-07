@@ -1,1 +1,14 @@
 @use "../util/" as *;
+
+h1,
+h2,
+h3 {
+  font-family: $font-rubik;
+}
+
+p,
+input,
+input::placeholder,
+input {
+  font-family: $font-rubik;
+}

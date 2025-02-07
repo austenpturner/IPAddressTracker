@@ -1,0 +1,16 @@
+@use "../../styles/util/" as *;
+
+.header {
+  background-image: url("../../assets/images/pattern-bg-mobile.png");
+  color: $white;
+  @include breakpoint(medium) {
+    background-image: url("../../assets/images/pattern-bg-desktop.png");
+  }
+  h1 {
+    font-weight: 400;
+    font-size: rem(22);
+    margin: 0;
+    padding: rem(20) 0;
+    text-align: center;
+  }
+}

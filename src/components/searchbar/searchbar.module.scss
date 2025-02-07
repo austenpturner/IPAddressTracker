@@ -1,0 +1,32 @@
+@use "../../styles/util/" as *;
+
+.searchbarContainer {
+  form {
+    display: flex;
+    justify-content: center;
+    input {
+      border: 0.5px solid $dark-grey;
+      border-right: none;
+      border-radius: 10px 0 0 10px;
+      color: $very-dark-grey;
+      height: rem(40);
+      padding: rem(8) rem(16);
+      width: 80%;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      background-color: $very-dark-grey;
+      border: none;
+      border-radius: 0 10px 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(40);
+      img {
+        width: rem(6);
+      }
+    }
+  }
+}

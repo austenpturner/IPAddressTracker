@@ -6,6 +6,9 @@
     justify-content: center;
     margin: 0 auto;
     width: 90%;
+    @include breakpoint(large) {
+      width: rem(450);
+    }
     input {
       border: 0.5px solid $dark-grey;
       border-right: none;

@@ -7,11 +7,17 @@
   @include breakpoint(medium) {
     background-image: url("../../assets/images/pattern-bg-desktop.png");
   }
+  @include breakpoint(large) {
+    height: 30vh;
+  }
   h1 {
     font-weight: 500;
     font-size: rem(22);
     margin: 0;
     padding: rem(24) 0;
     text-align: center;
+    @include breakpoint(large) {
+      font-size: rem(24);
+    }
   }
 }

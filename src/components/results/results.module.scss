@@ -12,25 +12,13 @@
   top: rem(150);
   width: 90vw;
   z-index: 10;
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     flex-direction: row;
     justify-content: space-evenly;
-    padding: rem(30) 0 0;
-  }
-  @include breakpoint(large) {
-    gap: rem(10);
-    left: 15%;
-    padding: rem(30) rem(30) 0;
-    top: rem(160);
-    width: 70vw;
-  }
-  .desktopBorder {
-    display: none;
-    @include breakpoint(large) {
-      background-color: $dark-grey;
-      display: block;
-      height: 80%;
-      width: rem(2);
-    }
+    // gap: rem(10);
+    left: 10%;
+    padding: rem(30) rem(20);
+    top: 20vh;
+    width: 80vw;
   }
 }

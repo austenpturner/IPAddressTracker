@@ -32,7 +32,7 @@ export function useFetchIPData(input, dispatch) {
             {
               id: 2,
               name: "Location",
-              result: `${geoData.location.region}, ${geoData.location.country}, ${ipData.zip}`,
+              result: `${geoData.location.region}, ${geoData.location.country} ${ipData.zip}`,
             },
             {
               id: 3,

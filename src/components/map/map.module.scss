@@ -1,10 +1,8 @@
 @use "../../styles/util/" as *;
 
-.mapContainer {
-  div {
-    height: 60vh;
-    @include breakpoint(large) {
-      height: 70vh;
-    }
+.loadingContainer {
+  p {
+    margin: 50% auto;
+    text-align: center;
   }
 }

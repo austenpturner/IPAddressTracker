@@ -4,16 +4,11 @@
   display: flex;
   flex-direction: column;
   gap: rem(8);
-  padding: 0 0 rem(20);
-  @include breakpoint(medium) {
-    gap: rem(12);
-    padding: 0 0 rem(30);
-  }
   @include breakpoint(large) {
     border-right: rem(2) solid $light-grey;
-    max-width: rem(200);
-    padding: 0 0 0 rem(20);
-    width: 17.5vw;
+    height: 65%;
+    padding: 0 rem(20);
+    width: 25%;
     &:last-child {
       border-right: none;
     }
@@ -23,26 +18,16 @@
     margin: 0 auto;
     text-align: center;
     @include breakpoint(large) {
+      align-self: center;
       margin: 0;
+      width: rem(180);
       text-align: left;
     }
   }
   h2 {
     color: $dark-grey;
-    font-size: rem(10);
-    font-weight: 700;
-    letter-spacing: rem(1.6);
-    text-transform: uppercase;
-    @include breakpoint(large) {
-      font-size: rem(11);
-    }
   }
   p {
     color: $very-dark-grey;
-    font-size: rem(18);
-    font-weight: 500;
-    @include breakpoint(large) {
-      font-size: rem(20);
-    }
   }
 }

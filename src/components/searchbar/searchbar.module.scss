@@ -26,10 +26,14 @@
       background-color: $very-dark-grey;
       border: none;
       border-radius: 0 $br $br 0;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       width: rem(50);
+      &:hover {
+        background-color: $very-dark-grey-hover;
+      }
       img {
         width: rem(10);
       }

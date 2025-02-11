@@ -1,38 +1,10 @@
-import { useContext } from "react";
-import { TrackerContext } from "../../context/TrackerContext";
-import {
-  APIProvider,
-  Map,
-  AdvancedMarker,
-  useApiIsLoaded,
-} from "@vis.gl/react-google-maps";
+import { Map, AdvancedMarker, useApiIsLoaded } from "@vis.gl/react-google-maps";
 import customMarker from "../../assets/images/icon-location.svg";
 import PropTypes from "prop-types";
 import styles from "./map.module.scss";
 import { useWindowSize } from "../../hooks/useWindowResize";
 
-const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-
-export default function MapContainer() {
-  const { state } = useContext(TrackerContext);
-
-  if (!state.output)
-    return (
-      <div className={styles.loadingContainer}>
-        <p>Loading...</p>
-      </div>
-    );
-
-  return (
-    <div className={styles.mapContainer}>
-      <APIProvider apiKey={apiKey}>
-        <MapWrapper lat={state.output.lat} lng={state.output.lng} />
-      </APIProvider>
-    </div>
-  );
-}
-
-function MapWrapper({ lat, lng }) {
+export default function MapWrapper({ lat, lng }) {
   const isLoaded = useApiIsLoaded();
   const { width } = useWindowSize();
   const mapHeight = width >= 1024 ? "70vh" : "60vh";

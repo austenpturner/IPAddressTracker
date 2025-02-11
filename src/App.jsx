@@ -1,5 +1,4 @@
 import Header from "./components/header";
-import MapContainer from "./components/map";
 import ResultsContainer from "./components/results";
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
     <div style={{ position: "relative" }}>
       <Header />
       <ResultsContainer />
-      <MapContainer />
     </div>
   );
 }

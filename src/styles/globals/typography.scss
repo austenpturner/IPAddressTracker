@@ -12,3 +12,29 @@ input::placeholder,
 input {
   font-family: $font-rubik;
 }
+
+h1 {
+  font-weight: 500;
+  font-size: rem(24);
+  @include breakpoint(large) {
+    font-size: rem(28);
+  }
+}
+
+h2 {
+  font-size: rem(10);
+  font-weight: 700;
+  letter-spacing: rem(1.6);
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem(11);
+  }
+}
+
+p {
+  font-size: rem(18);
+  font-weight: 500;
+  @include breakpoint(large) {
+    font-size: rem(20);
+  }
+}

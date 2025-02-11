@@ -3,13 +3,17 @@ import customMarker from "../../assets/images/icon-location.svg";
 import PropTypes from "prop-types";
 import styles from "./map.module.scss";
 import { useWindowSize } from "../../hooks/useWindowResize";
+import { useContext } from "react";
+import { TrackerContext } from "../../context/TrackerContext";
 
-export default function MapWrapper({ lat, lng }) {
+export default function MapWrapper() {
+  const { state } = useContext(TrackerContext);
+  const { lat, lng } = state.output;
   const isLoaded = useApiIsLoaded();
   const { width } = useWindowSize();
   const mapHeight = width >= 1024 ? "70vh" : "60vh";
 
-  if (!isLoaded) {
+  if (!isLoaded || !state.output || !lat || !lng) {
     return (
       <div className={styles.loadingContainer}>
         <p>Loading map...</p>

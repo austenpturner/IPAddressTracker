@@ -1,18 +1,19 @@
 import { useEffect } from "react";
 
-const apiKey = import.meta.env.VITE_GEOLOCATION_API_KEY;
+const ipifyKey = import.meta.env.VITE_IPIFY_API_KEY;
+const ipinfoKey = import.meta.env.VITE_IPINFO_API_KEY;
 
 export function useFetchIPData(input, dispatch) {
   useEffect(() => {
     async function fetchData() {
       try {
         const geoIpifyUrl = input
-          ? `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&ipAddress=${input}`
-          : `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}`;
+          ? `https://geo.ipify.org/api/v2/country?apiKey=${ipifyKey}&ipAddress=${input}`
+          : `https://geo.ipify.org/api/v2/country?apiKey=${ipifyKey}`;
 
         const ipApiUrl = input
-          ? `http://ip-api.com/json/${input}`
-          : `http://ip-api.com/json/`;
+          ? `https://ipinfo.io/${input}/json?token=${ipinfoKey}`
+          : `https://ipinfo.io/json?token=${ipinfoKey}`;
 
         const [geoResponse, ipResponse] = await Promise.all([
           fetch(geoIpifyUrl),
@@ -26,13 +27,15 @@ export function useFetchIPData(input, dispatch) {
         const geoData = await geoResponse.json();
         const ipData = await ipResponse.json();
 
+        const [lat, lng] = ipData.loc.split(",");
+
         const data = {
           results: [
             { id: 1, name: "IP Address", result: geoData.ip },
             {
               id: 2,
               name: "Location",
-              result: `${geoData.location.region}, ${geoData.location.country} ${ipData.zip}`,
+              result: `${geoData.location.region}, ${geoData.location.country} ${ipData.postal}`,
             },
             {
               id: 3,
@@ -41,8 +44,8 @@ export function useFetchIPData(input, dispatch) {
             },
             { id: 4, name: "ISP", result: geoData.isp },
           ],
-          lat: ipData.lat,
-          lng: ipData.lon,
+          lat: Number(lat),
+          lng: Number(lng),
         };
 
         dispatch({ type: "SET_OUTPUT", payload: data });

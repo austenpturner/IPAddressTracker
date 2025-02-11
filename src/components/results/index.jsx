@@ -2,10 +2,7 @@ import { useContext } from "react";
 import ResultCard from "../card";
 import styles from "./results.module.scss";
 import { TrackerContext } from "../../context/TrackerContext";
-import { APIProvider } from "@vis.gl/react-google-maps";
 import MapWrapper from "../map";
-
-const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export default function ResultsContainer() {
   const { state } = useContext(TrackerContext);
@@ -31,9 +28,7 @@ export default function ResultsContainer() {
         })}
       </div>
       <div className={styles.mapContainer}>
-        <APIProvider apiKey={apiKey}>
-          <MapWrapper lat={state.output.lat} lng={state.output.lng} />
-        </APIProvider>
+        <MapWrapper />
       </div>
     </div>
   );

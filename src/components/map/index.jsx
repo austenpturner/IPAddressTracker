@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styles from "./map.module.scss";
 import { useWindowSize } from "../../hooks/useWindowResize";
 import { useContext } from "react";
-import { TrackerContext } from "../../context/TrackerContext";
+import { TrackerContext } from "../../context/trackerContext";
 
 export default function MapWrapper() {
   const { state } = useContext(TrackerContext);

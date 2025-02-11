@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import searchArrow from "../../assets/images/icon-arrow.svg";
 import styles from "./searchbar.module.scss";
-import { TrackerContext } from "../../context/TrackerContext";
 import { useFetchIPData } from "../../hooks/useFetchIPData";
+import { TrackerContext } from "../../context/trackerContext";
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState("");
